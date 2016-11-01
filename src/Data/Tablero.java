@@ -10,8 +10,8 @@ public class Tablero {
     public static CriaturaBuena c = new CriaturaBuena(8, 0, "Ninfa de la laguna", "Hacerte avanzar");
     public static CriaturaBuena d = new CriaturaBuena(5, 0, "El sabio hermitaño", "Dos turnos extras");
     public static CriaturaMala f = new CriaturaMala(0, 2, "El minotauro", "Pierdes dos turnos");
-    public static CriaturaMala g = new CriaturaMala(8, 0, "El dragon", "Pierdes turnos");
-    public static CriaturaMala h = new CriaturaMala(0, 2, "El gran monstruo del bosque", "Retrocede casillas");
+    public static CriaturaMala g = new CriaturaMala(0, 2, "El dragon", "Pierdes turnos");
+    public static CriaturaMala h = new CriaturaMala(8, 0, "El gran monstruo del bosque", "Retrocede casillas");
 
     public Tablero() {
 
@@ -45,4 +45,9 @@ public class Tablero {
             }
         }
     }
+
+    public Casilla[] getTablero() {
+        return tablero;
+    }
+    
 }

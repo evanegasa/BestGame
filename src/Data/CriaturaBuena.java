@@ -1,29 +1,21 @@
 package Data;
 
-public class CriaturaBuena extends Criatura  {
-	private int casillasAvanza;
-	private int turnosExtra;
+public class CriaturaBuena extends Criatura {
 
-	public CriaturaBuena(int casillasAvanza, int turnosExtra, String nombre, String habilidad) {
-		super(nombre, habilidad);
-		this.casillasAvanza = casillasAvanza;
-		this.turnosExtra = turnosExtra;
-	}
+    private final int casillasAvanza;
+    private final int turnosExtra;
 
-	public int getCasillasAvanza() {
-		return casillasAvanza;
-	}
+    public CriaturaBuena(int casillasAvanza, int turnosExtra, String nombre, String habilidad) {
+        super(nombre, habilidad);
+        this.casillasAvanza = casillasAvanza;
+        this.turnosExtra = turnosExtra;
+    }
 
-	public void setCasillasAvanza(int casillasAvanza) {
-		this.casillasAvanza = casillasAvanza;
-	}
+    public int getCasillasAvanza() {
+        return casillasAvanza;
+    }
 
-	public int getTurnosExtra() {
-		return turnosExtra;
-	}
-
-	public void setTurnosExtra(int turnosExtra) {
-		this.turnosExtra = turnosExtra;
-	}  
-
+    public int getTurnosExtra() {
+        return turnosExtra;
+    }
 }

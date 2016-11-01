@@ -2,13 +2,14 @@ package Data;
 
 import java.awt.Color;
 
-public class Jugador {
+public class Player {
 
     private Color color;
     private int posicion;
     private boolean canPlay = true;
+    private int turns;
 
-    public Jugador(Color color) {
+    public Player(Color color) {
         this.color = color;
         posicion = 0;
     }
@@ -28,12 +29,19 @@ public class Jugador {
     public void setPosicion(int posicion) {
         this.posicion = posicion;
     }
-
-    public boolean isCanPlay() {
-        return canPlay;
+    
+    public void cantPlay(int turns){
+        this.canPlay = false;
+        this.turns = turns;
     }
 
-    public void setCanPlay(boolean canPlay) {
-        this.canPlay = canPlay;
+    public boolean canPlay() {
+        if(canPlay == false){
+            turns--;
+        }if(turns == -1){
+            canPlay = true;
+        }
+        
+        return canPlay;
     }
 }

@@ -2,7 +2,7 @@ package Data;
 
 public class Casilla {
 
-    private int posicion;
+    private final int posicion;
     private Criatura criatura;
     private int variacionCasillas;
     private String nombreCasilla;
@@ -16,6 +16,7 @@ public class Casilla {
     public Casilla(Criatura criatura, int posicion) {
         this.posicion = posicion;
         this.criatura = criatura;
+        this.nombreCasilla = criatura.getNombre();
         hayCriatura = true;
     }
 
@@ -29,4 +30,11 @@ public class Casilla {
     public boolean isCriatura() {
         return hayCriatura;
     }
+
+    public String getNombreCasilla() {
+        return nombreCasilla;
+    }
+    
+    
+    
 }

@@ -1,39 +1,27 @@
 package Data;
 
-public class CriaturaNeutra extends Criatura{
-	private String habilidadDos;
-	private int casillasAvRe;
-	private int turnosExpe;
+public class CriaturaNeutra extends Criatura {
 
-	public CriaturaNeutra(String habilidadDos, int casillasAvRe, int turnosExpe, String nombre, String habilidad) {
-		super(nombre, habilidad);
-		this.habilidadDos = habilidadDos;
-		this.casillasAvRe = casillasAvRe;
-		this.turnosExpe = turnosExpe;
-	}
+    private final String habilidadDos;
+    private final int casillasAvRe;
+    private final int turnosExpe;
 
-	public String getHabilidadDos() {
-		return habilidadDos;
-	}
+    public CriaturaNeutra(String habilidadDos, int casillasAvRe, int turnosExpe, String nombre, String habilidad) {
+        super(nombre, habilidad);
+        this.habilidadDos = habilidadDos;
+        this.casillasAvRe = casillasAvRe;
+        this.turnosExpe = turnosExpe;
+    }
 
-	public void setHabilidadDos(String habilidadDos) {
-		this.habilidadDos = habilidadDos;
-	}
+    public String getHabilidadDos() {
+        return habilidadDos;
+    }
+    
+    public int getCasillasAvRe() {
+        return casillasAvRe;
+    }
 
-	public int getCasillasAvRe() {
-		return casillasAvRe;
-	}
-
-	public void setCasillasAvRe(int casillasAvRe) {
-		this.casillasAvRe = casillasAvRe;
-	}
-
-	public int getTurnosExpe() {
-		return turnosExpe;
-	}
-
-	public void setTurnosExpe(int turnosExpe) {
-		this.turnosExpe = turnosExpe;
-	}
-
+    public int getTurnosExpe() {
+        return turnosExpe;
+    }
 }

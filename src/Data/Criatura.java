@@ -1,39 +1,20 @@
 package Data;
 
 public abstract class Criatura {
-	private String nombre;
-	private String habilidad;
-	//private Casilla casilla;
 
-	public Criatura(String nombre, String habilidad) {
-		this.nombre = nombre;
-		this.habilidad = habilidad;
-		//this.casilla = casilla;
-	}
+    private final String nombre;
+    private final String habilidad;
 
-	public String getNombre() {
-		return nombre;
-	}
+    public Criatura(String nombre, String habilidad) {
+        this.nombre = nombre;
+        this.habilidad = habilidad;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public String getHabilidad() {
-		return habilidad;
-	}
-
-	public void setHabilidad(String habilidad) {
-		this.habilidad = habilidad;
-	}
-
-	// public Casilla getCasilla() {
-	//  return casilla;
-	//}
-
-	//    public void setCasilla(Casilla casilla) {
-	//   this.casilla = casilla;
-	//}
-
-
+    public String getHabilidad() {
+        return habilidad;
+    }
 }
