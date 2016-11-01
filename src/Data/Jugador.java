@@ -6,6 +6,7 @@ public class Jugador {
 
     private Color color;
     private int posicion;
+    private boolean canPlay = true;
 
     public Jugador(Color color) {
         this.color = color;
@@ -26,5 +27,13 @@ public class Jugador {
 
     public void setPosicion(int posicion) {
         this.posicion = posicion;
+    }
+
+    public boolean isCanPlay() {
+        return canPlay;
+    }
+
+    public void setCanPlay(boolean canPlay) {
+        this.canPlay = canPlay;
     }
 }
