@@ -6,11 +6,12 @@ import static BusinessLogic.PerdidosEnElBosque.*;
 
 import java.util.Scanner;
 
-public class UI {
+public class UI implements InterfazGrafica{
 
-    private static Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
-    public static void menu() {
+    @Override
+    public void menu() {
         System.out.println("BIENVENIDOS A PERDIDOS EN EL BOSQUE");
         System.out.println("1 Jugar");
         System.out.println("2 Ayuda");
@@ -33,15 +34,16 @@ public class UI {
         }
     }
 
-    private static void ayuda() {
+    private void ayuda() {
         System.out.println("Play and have fun");
     }
     
-    private static int rollDie(){
+    private int rollDie(){
         return (int) (Math.random() * 6 + 1);
     }
     
-    public static int rollDice() {
+    @Override
+    public int rollDice() {
         System.out.println("Presiona ENTER para tirar los dados...");
         sc.nextLine();
         int d1 = rollDie();
@@ -50,7 +52,8 @@ public class UI {
         return d1 + d2;
     }
 
-    public static void printSquare(int posicion) {
+    @Override
+    public void printSquare(int posicion) {
         Casilla casilla = PerdidosEnElBosque.tablero.getTablero()[posicion];
         if(casilla==null){
             
@@ -63,7 +66,8 @@ public class UI {
         }
     }
                         
-    public static void imprimirTablero(Casilla[] tablero) {
+    @Override
+    public void imprimirTablero(Casilla[] tablero) {
         for (int p = 0; p < tablero.length; p++) {
             if (p % 10 == 0) {
                 System.out.println();
@@ -91,15 +95,18 @@ public class UI {
         System.out.println("");
     }
 
-    public static void whoIsPlaying(int i) {
+    @Override
+    public void whoIsPlaying(int i) {
         System.out.println("Turno del jugador " + (i+1));
     }
 
-    public static void imprimirGanador(int i) {
+    @Override
+    public void imprimirGanador(int i) {
         System.out.println("Felicitaciones, el jugador " + (i+1) + " ha ganado!");
     }
 
-    public static void print(String string) {
+    @Override
+    public void print(String string) {
         System.out.println(string);
     }
 }
