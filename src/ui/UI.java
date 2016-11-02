@@ -1,16 +1,16 @@
 package ui;
 
-import BusinessLogic.ControlTurno;
-import BusinessLogic.PerdidosEnElBosque;
+import BusinessLogic.*;
+import Data.*;
 import static BusinessLogic.PerdidosEnElBosque.*;
-import Data.Casilla;
+
 import java.util.Scanner;
 
 public class UI {
 
     private static Scanner sc = new Scanner(System.in);
 
-    public static void menu() throws InterruptedException {
+    public static void menu() {
         System.out.println("BIENVENIDOS A PERDIDOS EN EL BOSQUE");
         System.out.println("1 Jugar");
         System.out.println("2 Ayuda");
@@ -19,7 +19,8 @@ public class UI {
         int i = 0;
         while (i < 1 || i > 3) {
             if(sc.hasNextInt()){
-                switch (sc.nextInt()) {
+                i = sc.nextInt();
+                switch (i) {
                     case 1: jugar();        break;
                     case 2: ayuda();        break;
                     case 3: System.exit(0); break;
@@ -36,23 +37,67 @@ public class UI {
         System.out.println("Play and have fun");
     }
     
-    public static int rollDice() throws InterruptedException {
-        System.out.println("Se están tirando los dados...");
-        Thread.sleep(1000);
-        int d1=ControlTurno.rollDice();
-        int d2=ControlTurno.rollDice();
+    private static int rollDie(){
+        return (int) (Math.random() * 6 + 1);
+    }
+    
+    public static int rollDice() {
+        System.out.println("Presiona ENTER para tirar los dados...");
+        sc.nextLine();
+        int d1 = rollDie();
+        int d2 = rollDie();
         System.out.println(d1 + ", " + d2);
         return d1 + d2;
     }
 
-    public static void printCasilla(int posicion) {
+    public static void printSquare(int posicion) {
         Casilla casilla = PerdidosEnElBosque.tablero.getTablero()[posicion];
         if(casilla==null){
             
-        } else if(casilla.isCriatura()){
-            System.out.println("Has caido donde: " + casilla.getNombreCasilla());
-            System.out.println(casilla);
+        } else if(casilla.isCreature()){
+            System.out.print("Has caido donde: " + casilla.getSquareName());
+            System.out.println("\n" + casilla.getActionDescription());
+        } else {
+            System.out.print("Has caido en: " + casilla.getSquareName());
+            System.out.println("\n" + casilla.getActionDescription());
         }
     }
+                        
+    public static void imprimirTablero(Casilla[] tablero) {
+        for (int p = 0; p < tablero.length; p++) {
+            if (p % 10 == 0) {
+                System.out.println();
+            }
+            if (p == 0) {
+                System.out.print("H ");
+            } else if (p == PerdidosEnElBosque.p1.getPosicion()) {
+                System.out.print("1 ");
+            } else if (p == PerdidosEnElBosque.p2.getPosicion()){
+                System.out.print("2 ");
+            } else if (p == PerdidosEnElBosque.p3.getPosicion()){
+                System.out.print("3 ");
+            } else if (p == PerdidosEnElBosque.p4.getPosicion()){
+                System.out.print("4 ");
+            } else if (p == n1 || p == n2 || p == n3){
+                System.out.print("~ ");
+            } else if (tablero[p] == null) {
+                System.out.print("* ");
+            } else {
+                System.out.print("o ");
+            }
+        }
+        System.out.println("");
+    }
 
+    public static void whoIsPlaying(int i) {
+        System.out.println("Turno del jugador " + (i+1));
+    }
+
+    public static void imprimirGanador(int i) {
+        System.out.println("Felicitaciones, el jugador " + (i+1) + " ha ganado!");
+    }
+
+    public static void print(String string) {
+        System.out.println(string);
+    }
 }

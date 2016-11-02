@@ -2,39 +2,37 @@ package Data;
 
 public class Casilla {
 
-    private final int posicion;
-    private Criatura criatura;
-    private int variacionCasillas;
-    private String nombreCasilla;
-    private boolean hayCriatura;
+    private final String squareName;
+    private final int positionControl;
+    private final int turnControl;
+    private final String actionDescription;
+    private final boolean isCreature;
 
-    public Casilla(int posicion) {
-        this.posicion = posicion;
-        hayCriatura = false;
-    }
-
-    public Casilla(Criatura criatura, int posicion) {
-        this.posicion = posicion;
-        this.criatura = criatura;
-        this.nombreCasilla = criatura.getNombre();
-        hayCriatura = true;
-    }
-
-    public Casilla(int variacionTurnos, String nombreCasilla, int posicion) {
-        this.posicion = posicion;
-        this.variacionCasillas = variacionTurnos;
-        this.nombreCasilla = nombreCasilla;
-        hayCriatura = false;
-    }
-
-    public boolean isCriatura() {
-        return hayCriatura;
-    }
-
-    public String getNombreCasilla() {
-        return nombreCasilla;
+    public Casilla(String squareName, int positionControl, int turnControl, String actionDesciption, boolean isCreature) {
+        this.squareName = squareName;
+        this.positionControl = positionControl;
+        this.turnControl = turnControl;
+        this.actionDescription = actionDesciption;
+        this.isCreature = isCreature;
     }
     
-    
-    
+    public String getSquareName() {
+        return squareName;
+    }
+
+    public int getPositionControl() {
+        return positionControl;
+    }
+
+    public int getTurnControl() {
+        return turnControl;
+    }
+
+    public String getActionDescription() {
+        return actionDescription;
+    }
+
+    public boolean isCreature() {
+        return isCreature;
+    }
 }
