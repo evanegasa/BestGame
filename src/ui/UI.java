@@ -82,6 +82,8 @@ public class UI {
                 System.out.print("~ ");
             } else if (tablero[p] == null) {
                 System.out.print("* ");
+            } else if (tablero[p].getPositionControl() < 0 || tablero[p].getTurnControl()<0){
+                System.out.print("x ");
             } else {
                 System.out.print("o ");
             }

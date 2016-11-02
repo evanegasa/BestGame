@@ -20,7 +20,7 @@ public class Tablero {
 
         tablero[5]  = new Casilla("Puente arcoiris", 15, 0, "Avanzas 15 casillas", false);
         tablero[30] = new Casilla("Puente roto", -15, 0, "Retrocedes 15 casillas", false);
-        tablero[60] = new Casilla("Tronco caido", 0, -1, "Pierdes 1 turno", false);
+        tablero[70] = new Casilla("Tronco caido", 0, -1, "Pierdes 1 turno", false);
     }
 
     public Casilla[] getTablero() {
