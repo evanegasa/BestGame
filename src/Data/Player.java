@@ -6,11 +6,14 @@ public class Player {
 
     private Color color;
     private int posicion;
+    private String id;
     private boolean canPlay = true;
     private int turns;
+    private boolean isWinner;
 
     public Player(Color color) {
         this.color = color;
+        this.id = id;
         posicion = 0;
     }
 

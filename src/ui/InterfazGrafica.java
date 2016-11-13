@@ -5,7 +5,7 @@ import Data.Casilla;
 
 public interface InterfazGrafica {
 
-    void imprimirGanador(int i);
+    public void imprimirGanador(int i);
 
     void imprimirTablero(Casilla[] tablero);
 
@@ -15,7 +15,7 @@ public interface InterfazGrafica {
 
     void printSquare(int posicion);
 
-    int rollDice();
+    //public int rollDice();
 
     void whoIsPlaying(int i);
     

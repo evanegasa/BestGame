@@ -1,13 +1,18 @@
 package Data;
 
+import BusinessLogic.ControlJuego;
+import ui.GUI;
 import ui.UI;
 
 public class Tablero {
 
     private final int numeroCasillas = 100;
     private Casilla[] tablero;
+   
 
     public Tablero() {
+        
+ 
         tablero = new Casilla[numeroCasillas];
         tablero[13] = new Casilla("Hada del pantano", 5, 0, "Avanzas 5 casillas", true);
         tablero[24] = new Casilla("Duende de la suerte", 0, 1, "Tienes 1 lanzamiento extra", true);
@@ -29,21 +34,22 @@ public class Tablero {
     
     public Casilla elfoEnigma() {
         String mensaje = "";
-        if(UI.rollDice() >= 6){
+        if(ControlJuego.rollDice()  >= 6){
+            
             return new Casilla("Elfo enignma", 0, -1, "Pierdes un turno", true);
         } 
         return null;
     }
 
     public Casilla magoMontana() {
-        if(UI.rollDice() >= 8){
+        if(ControlJuego.rollDice()>= 8){
             return new Casilla("", 10, 0, "Avanzas 10 casillas", true);
         } 
             return new Casilla("", -14, 0, "Retrocedes 14 casillas", true);
     }
 
     public Casilla Dragon() {
-        if(UI.rollDice()%2 == 0){
+        if(ControlJuego.rollDice()%2 == 0){
             return null;
         }else{
             return new Casilla("", 0, -3, "Pierdes 3 turnos",true);
