@@ -1,14 +1,11 @@
 package Data;
 
 import BusinessLogic.ControlJuego;
-import ui.GUI;
-import ui.UI;
 
 public class Tablero {
 
     private final int numeroCasillas = 100;
     private Casilla[] tablero;
-   
 
     public Tablero() {
         
