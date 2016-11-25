@@ -1,22 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ui.frames;
 
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.DEFAULT_OPTION;
 
-/**
- *
- * @author Juansebastian
- */
 public class PantallaInicio extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PantallaInicio
-     */
     public PantallaInicio() {
         
         this.setName("Perdidos en el Bosque");
@@ -44,8 +32,9 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         jPanel1.setOpaque(false);
 
+        jButton1.setBackground(new java.awt.Color(153, 153, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("JUGAR");
+        jButton1.setText("Jugar");
         jButton1.setOpaque(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,7 +43,7 @@ public class PantallaInicio extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton3.setText("AYUDA");
+        jButton3.setText("Ayuda");
         jButton3.setOpaque(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +52,7 @@ public class PantallaInicio extends javax.swing.JFrame {
         });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton4.setText("SALIR");
+        jButton4.setText("Salir");
         jButton4.setOpaque(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,11 +94,9 @@ public class PantallaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        TableroUI tablero = new TableroUI();
-        tablero.setVisible(true);
-        tablero.setResizable(true);
-        
+        setVisible(false);
+//        new TableroUI(("/imagenes/tablero.jpg"));
+        new TableroGUI();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -117,9 +104,7 @@ public class PantallaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         JOptionPane.showMessageDialog(null, "Play and have Fun" , "Ventana de confirmacion", DEFAULT_OPTION);
-
-    
+        JOptionPane.showMessageDialog(null, "Play and have Fun" , "Ventana de confirmacion", DEFAULT_OPTION);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

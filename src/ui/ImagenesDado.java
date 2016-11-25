@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ui;
 
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Juansebastian
- */
 public class ImagenesDado {
 
     public ImageIcon icoImagen;
@@ -29,7 +20,12 @@ public class ImagenesDado {
                 icoImagen = new ImageIcon(getClass().getResource("/imagenes/Dado/gifs/dados-03.gif"));
                 break;
             case 4:
+                try {
                 icoImagen = new ImageIcon(getClass().getResource("/imagenes/Dado/gifs/dados-04.gif"));
+                    
+                } catch (Exception e) {
+                e.printStackTrace();
+                }
                 break;
             case 5:
                 icoImagen = new ImageIcon(getClass().getResource("/imagenes/Dado/gifs/dados-05.gif"));
