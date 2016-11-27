@@ -32,7 +32,6 @@ public class Tablero {
     public Casilla elfoEnigma() {
         String mensaje = "";
         if(ControlJuego.rollDice()  >= 6){
-            
             return new Casilla("Elfo enignma", 0, -1, "Pierdes un turno", true);
         } 
         return null;
@@ -41,7 +40,7 @@ public class Tablero {
     public Casilla magoMontana() {
         if(ControlJuego.rollDice()>= 8){
             return new Casilla("", 10, 0, "Avanzas 10 casillas", true);
-        } 
+        }
             return new Casilla("", -14, 0, "Retrocedes 14 casillas", true);
     }
 

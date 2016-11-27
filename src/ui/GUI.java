@@ -1,14 +1,34 @@
 package ui;
 
+import BusinessLogic.PerdidosEnElBosque;
 import ui.frames.PantallaInicio;
-import Data.Casilla;
+import Data.*;
+import java.io.*;
+import java.util.Arrays;
 import javax.swing.*;
+import ui.frames.TableroGUI;
 
 public final class GUI implements InterfazGrafica {
 
     private JFrame f = new PantallaInicio();
+    public static int[] xDir = new int[66], yDir = new int[66];
+    private TableroGUI tablero;
 
     public GUI() {
+        
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(System.getProperty("user.dir") + "/src/Data/Casillas.csv"));
+            String line;
+            int i = 0;
+            while((line = reader.readLine()) != null){
+                String [] coordinates  = line.split(", ");
+                xDir[i] = Integer.parseInt(coordinates[0]);
+                yDir[i] = Integer.parseInt(coordinates[1]);
+                i++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         menu();
     }
 
@@ -17,7 +37,11 @@ public final class GUI implements InterfazGrafica {
     }
 
     @Override
-    public void imprimirTablero(Casilla[] tablero) {
+    public void imprimirTablero(Casilla[] casillas) {
+        
+        System.out.println("se esta imprimierdndo");
+        if(tablero == null) tablero = new TableroGUI();
+        else tablero.render();
     }
 
     @Override
